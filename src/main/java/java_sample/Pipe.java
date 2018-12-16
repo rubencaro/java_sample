@@ -64,6 +64,13 @@ public class Pipe extends PipeBase {
   }
 
   public String pipeLast() {
-    return this.value;
+    if (this.isOK())
+      return this.value;
+    return "Errored";
+  }
+
+  public Pipe setError() {
+    this.status = Status.ERROR;
+    return this;
   }
 }

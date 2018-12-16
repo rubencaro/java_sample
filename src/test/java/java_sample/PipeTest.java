@@ -13,4 +13,9 @@ public class PipeTest {
     public void testComplexPipe() {
         assertEquals("Hello World! 2", new Pipe().complex().value);
     }
+
+    @Test
+    public void testComplexErrorPipe() {
+        assertEquals("Errored", new Pipe().setError().complex().pipeLast());
+    }
 }
